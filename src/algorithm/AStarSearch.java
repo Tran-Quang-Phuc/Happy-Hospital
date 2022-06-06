@@ -37,15 +37,15 @@ public class AStarSearch {
 }
 
 class Spot {
-    public int i;
-    public int j;
+    public double i;
+    public double j;
     public double f;
     public double g;
     public double h;
     public ArrayList<Spot> neighbors = new ArrayList<>();
     public Spot previous;
 
-    public Spot(int i, int j) {
+    public Spot(double i, double j) {
         this.i = i;
         this.j = j;
         this.f = 0;
