@@ -1,10 +1,10 @@
 package classes;
 
 public class Position {
-    public double x;
-    public double y;
+    public int x;
+    public int y;
 
-    public Position(double x, double y) {
+    public Position(int x, int y) {
         this.x = x;
         this.y = y;
     }
