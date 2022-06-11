@@ -9,16 +9,17 @@ public class RandomDistribution {
         Prob Prob = new Prob();
         double ran = Math.random();
         ran = Math.floor(ran * 4);
-        switch(ran) {
-            case 0d:
+        int Ran = (int)ran;
+        switch(Ran) {
+            case 0:
                 PoissonDistribution poisson = Prob.poisson(); //Math.random();
                 this._name = "Poisson";
                 return poisson.random();
-            case 1d:
+            case 1:
                 UniformDistribution uniform = Prob.uniform();
                 this._name = "Uniform";
                 return uniform.random();
-            case 2d:
+            case 2:
                 this._name = "Bimodal";
                 BimodalDistribution bimodal = Prob.bimodal();
                 return bimodal.random();
@@ -31,6 +32,7 @@ public class RandomDistribution {
     }
 
     public String get_name() {
+
         return this._name;
     }
     

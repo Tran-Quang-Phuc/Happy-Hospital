@@ -1,20 +1,22 @@
 package classes;
 
+import classes.statesOfAutoAgv.HybridState;
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
+
 public class AutoAgv extends Actor{
     public  Graph graph;
-    public Node2D[] path
+    public Node2D[] path;
     public Node2D curNode;
     public Node2D endNode;
     public int cur;
     public double waitT;
     public int sobuocdichuyen;
     public double thoigiandichuyen;
-    public HybridState  hybridState;
+    public HybridState hybridState;
     public int endX;
     public int endY;
     public Text firstText;
