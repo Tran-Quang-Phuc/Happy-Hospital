@@ -1,4 +1,5 @@
-import {Constant,ModeofPathPlanning} from "../Constant"
+import
+import classes.statistic.Constant; {Constant,ModeofPathPlanning} from "../Constant"
 package  classes;
 
 enum StateOfNode2D {

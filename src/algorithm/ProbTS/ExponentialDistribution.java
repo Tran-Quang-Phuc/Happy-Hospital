@@ -1,7 +1,7 @@
 package algorithm.ProbTS;
 
 import static algorithm.ProbTS.Constant._rng01;
-// import static algorithm.ProbTS.Constant._rng11;
+// import static algorithm.ProbTS.classes.statistic.Constant._rng11;
 
 
 public class ExponentialDistribution implements Distribution {
