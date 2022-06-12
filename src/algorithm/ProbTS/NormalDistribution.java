@@ -1,6 +1,6 @@
 package algorithm.ProbTS;
 
-//import static algorithm.ProbTS.Constant._rng01;
+//import static algorithm.ProbTS.classes.statistic.Constant._rng01;
 import static algorithm.ProbTS.Constant._rng11;
 
 
