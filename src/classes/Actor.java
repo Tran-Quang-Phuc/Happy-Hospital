@@ -4,13 +4,12 @@ import classes.statistic.Constant;
 import javafx.scene.Scene;
 import java.util.HashSet;
 import java.util.Set;
-import classes.Text;
 
 public class Actor {
 
     Scene scene;
-    int x;
-    int y;
+    double x;
+    double y;
     int width;
     int height;
     int velocity;
@@ -20,15 +19,15 @@ public class Actor {
     public static int  _id = 0; //Đếm số agv, số thứ tự agv cũng là ID của nó
     private final int agvID;
     private double expectedTime;
-    public HashSet<Actor> collidedActors = new HashSet<>();
+    public Set<Actor> collidedActors = new HashSet<>();
 
 
     public Actor(
-        Scene scene,
-        int x,
-        int y,
-        String texture,
-        int frame
+            Scene scene,
+            double x,
+            double y,
+            String texture,
+            int frame
     ) {
 
         this.scene = scene;
@@ -102,6 +101,10 @@ public class Actor {
             tmp.replace(erasedStr, "");
             table.setText(tmp);
         }
+    }
+
+    public static void moveTo(Actor actor, double x, double y, double speed) {
+
     }
 
     public void freeze(Actor actor) {
