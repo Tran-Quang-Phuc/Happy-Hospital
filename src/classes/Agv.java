@@ -38,12 +38,12 @@ public class Agv extends Actor {
         // KEYS
 
         // PHYSICS
-        this.getBody().setSize(32, 32);
+        this.setSize(32, 32);
         this.setOrigin(0, 0);
 
         this.estimateArrivalTime(x, y, desX, desY);
     }
-    private Tilemaps.Tile[] getTilesWithin(): {
+    private Tilemaps.Tile[] getTilesWithin() {
         return this.pathLayer.getTilesWithinWorldXY(this.x, this.y, 31, 31);
     }
 
@@ -58,7 +58,7 @@ public class Agv extends Actor {
 
     }
     public void ToastOverLay(){
-        Text text=new Text();
+        Text text = new Text();
         text.setFont(new Font(30));
         text.setX(45); text.setY(150);
         text.setFill(Color.BLACK);
@@ -68,7 +68,7 @@ public class Agv extends Actor {
 
     }
     public void update(){
-        this.getBody().setVelocity(0);
+        this.setVelocity(0);
 
         //SHOW MESSAGE "AGV"
 
@@ -168,7 +168,7 @@ public class Agv extends Actor {
             setTimeout(()->{
                 this.isImmortal=true;
                 this.isDisable=false;
-                setTimeout(()->{this.isImmortal=false},2000);},1000);
+                setTimeout(()->{this.isImmortal=false;},2000);},1000);
             }
         }
     }

@@ -39,7 +39,7 @@ public class AutoAgv extends Actor{
         this.endY = endY * 32;
 
         this.graph = graph;
-        this.getBody().setSize(32, 32);
+        this.setSize(32, 32);
         this.setOrigin(0, 0);
         this.cur = 0;
         this.waitT = 0;
