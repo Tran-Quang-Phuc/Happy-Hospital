@@ -7,10 +7,21 @@ import java.util.Set;
 import classes.Text;
 
 public class Actor {
+
+    Scene scene;
+    int x;
+    int y;
+    int width;
+    int height;
+    int velocity;
+    String texture;
+    int frame;
+    boolean collideWorldBounds;
     public static int  _id = 0; //Đếm số agv, số thứ tự agv cũng là ID của nó
     private final int agvID;
     private double expectedTime;
-    public Set<Actor> collidedActors = new HashSet<>();
+    public HashSet<Actor> collidedActors = new HashSet<>();
+
 
     public Actor(
         Scene scene,
@@ -20,6 +31,12 @@ public class Actor {
         int frame
     ) {
 
+        this.scene = scene;
+        this.x = x;
+        this.y = y;
+        this.texture = texture;
+        this.frame = frame;
+        this.collideWorldBounds = true;
 
         if(texture == "agv") {
             Actor._id++;
@@ -28,6 +45,29 @@ public class Actor {
             this.agvID = -1;//Ám chỉ đây là agent
         }
         this.collidedActors = new HashSet<>();
+    }
+
+    public Actor(
+            Scene scene,
+            int x,
+            int y,
+            String texture
+    ) {
+        this(scene, x, y, texture, 0);
+    }
+
+    protected void setSize(int width, int height) {
+        this.width = width;
+        this.height = height;
+    }
+
+    protected void setVelocity(int velocity) {
+        this.velocity = velocity;
+    }
+
+    protected void setOrigin(int x, int y) {
+        this.x = x;
+        this.y = y;
     }
 
     public int getAgvID() {
@@ -61,6 +101,15 @@ public class Actor {
             String tmp = table.getText();
             tmp.replace(erasedStr, "");
             table.setText(tmp);
+        }
+    }
+
+    public void freeze(Actor actor) {
+        if(this.collidedActors == null) {
+            this.collidedActors = new HashSet<>();
+        }
+        if(!this.collidedActors.contains(actor)) {
+            this.collidedActors.add(actor);
         }
     }
 }
