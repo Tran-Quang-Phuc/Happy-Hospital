@@ -5,7 +5,7 @@ import classes.Position;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class AStarSearch {
+public class Astar {
     public double width;
     public double height;
     public Spot start;
@@ -14,12 +14,12 @@ public class AStarSearch {
     public ArrayList<ArrayList<Spot>> grid;
     public ArrayList<Spot> path = new ArrayList<>();
 
-    public AStarSearch(
+    public Astar(
             double width,
             double height,
             Position startPos,
             Position endPos,
-            Position[] ablePos
+            ArrayList<Position> ablePos
     ) {
         this.width = width;
         this.height = height;
@@ -35,8 +35,8 @@ public class AStarSearch {
         }
 
         this.ableSpot = new ArrayList<>();
-        for (int i = 0; i < ablePos.length; i++) {
-            this.ableSpot.add(this.grid.get(ablePos[i].x).get(ablePos[i].y));
+        for (int i = 0; i < ablePos.size(); i++) {
+            this.ableSpot.add(this.grid.get(ablePos[i].x)[ablePos[i].y]);
         }
 
         for (int i = 0; i < width; i++) {
