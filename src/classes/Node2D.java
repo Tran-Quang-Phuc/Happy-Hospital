@@ -1,14 +1,18 @@
-import
-import classes.statistic.Constant; {Constant,ModeofPathPlanning} from "../Constant"
 package  classes;
+
+import classes.statistic.Constant;
+
 
 enum StateOfNode2D {
     EMPTY,
     BUSY,
     NOT_ALLOW,
 }
-const float lambda = 0.4;
+
 public class Node2D {
+
+    final float lambda = 0.4;
+
     public int x;
     public int y;
     public Node2D nodeW;
@@ -21,10 +25,10 @@ public class Node2D {
     public int w_edge_E = Integer.MAX_VALUE;
     private float w=0;
     private float u=0;
-    public StateOfNode2D state;
-    public float p_random;
-    public float t_min;
-    public float t_max;
+    public StateOfNode2D state = StateOfNode2D.NOT_ALLOW;
+    public float p_random = (float) 0.05;
+    public float t_min = 2000;
+    public float t_max = 3000;
     public Node2D nodeVW;
     public Node2D nodeVN;
     public Node2D nodeVS;
@@ -35,14 +39,15 @@ public class Node2D {
     public int w_edge_VE = Integer.MAX_VALUE;
     public boolean isVirtualNode = false;
     private float _weight=0;
-    Node2D(
+
+    public Node2D(
        int x,
        int y,
-       boolean isVirtualNode = false,
-       StateOfNode2D state = StateOfNode2D.NOT_ALLOW,
-       float p_random = 0.05,
-       float t_min = 2000,
-       float t_max = 3000,
+       boolean isVirtualNode,
+       StateOfNode2D state,
+       float p_random,
+       float t_min,
+       float t_max
     ){
         this.x = x;
         this.y = y;

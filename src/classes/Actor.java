@@ -8,8 +8,8 @@ import java.util.Set;
 public class Actor {
 
     Scene scene;
-    double x;
-    double y;
+    public double x;
+    public double y;
     int width;
     int height;
     int velocity;
@@ -86,7 +86,7 @@ public class Actor {
             String enter = "";
             if(table.getText().length() > 0) enter = "\n";
             table.setText("DES_" + this.agvID + ": " +
-                    Constant.secondsToHMS(this.expectedTime) + " ± " + Constant.DURATION() + enter + table.getText());
+                    Constant.secondsToHMS(this.expectedTime) + " ± " + Constant.DURATION + enter + table.getText());
 
         }
     }
@@ -96,7 +96,7 @@ public class Actor {
             String enter = "";
             if(table.getText().length() > 0) enter = "\n";
             String erasedStr = "DES_" + this.agvID + ": " +
-                    Constant.secondsToHMS(this.expectedTime) + " ± " + Constant.DURATION() + enter + table.getText();
+                    Constant.secondsToHMS(this.expectedTime) + " ± " + Constant.DURATION + enter + table.getText();
             String tmp = table.getText();
             tmp.replace(erasedStr, "");
             table.setText(tmp);
