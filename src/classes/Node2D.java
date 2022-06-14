@@ -39,6 +39,7 @@ public class Node2D {
     public int w_edge_VE = Integer.MAX_VALUE;
     public boolean isVirtualNode = false;
     private float _weight=0;
+
     public Node2D(
        int x,
        int y,
