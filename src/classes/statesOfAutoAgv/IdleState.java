@@ -1,5 +1,6 @@
 package classes.statesOfAutoAgv;
 
+import classes.statistic.Constant;
 import javafx.scene.Scene;
 import classes.AutoAgv;
 import classes.statesOfAutoAgv.RunningState;
